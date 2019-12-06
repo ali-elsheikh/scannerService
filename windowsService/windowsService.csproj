@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34B0F172-027E-4789-8113-80340AD1D84F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>windowsService</RootNamespace>
+    <AssemblyName>windowsService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.4\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.4\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.4\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="namedPipe\namedPipeTransfer.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="scannerService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="scannerService.Designer.cs">
+      <DependentUpon>scannerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TwainDotNet\AreaSettings.cs" />
+    <Compile Include="TwainDotNet\Capability.cs" />
+    <Compile Include="TwainDotNet\CapabilityResult.cs" />
+    <Compile Include="TwainDotNet\DataSource.cs" />
+    <Compile Include="TwainDotNet\DataSourceManager.cs" />
+    <Compile Include="TwainDotNet\Diagnostics.cs" />
+    <Compile Include="TwainDotNet\FeederEmptyException.cs" />
+    <Compile Include="TwainDotNet\IWindowsMessageHook.cs" />
+    <Compile Include="TwainDotNet\PageSettings.cs" />
+    <Compile Include="TwainDotNet\ResolutionSettings.cs" />
+    <Compile Include="TwainDotNet\RotationSettings.cs" />
+    <Compile Include="TwainDotNet\ScanningCompleteEventArgs.cs" />
+    <Compile Include="TwainDotNet\ScanSettings.cs" />
+    <Compile Include="TwainDotNet\TransferImageEventArgs.cs" />
+    <Compile Include="TwainDotNet\Twain.cs" />
+    <Compile Include="TwainDotNet\TwainException.cs" />
+    <Compile Include="TwainDotNet\TwainNative\AutoSize.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Capabilities.cs" />
+    <Compile Include="TwainDotNet\TwainNative\CapabilityArrayValue.cs" />
+    <Compile Include="TwainDotNet\TwainNative\CapabilityEnumValue.cs" />
+    <Compile Include="TwainDotNet\TwainNative\CapabilityOneValue.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Command.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Compression.cs" />
+    <Compile Include="TwainDotNet\TwainNative\ConditionCode.cs" />
+    <Compile Include="TwainDotNet\TwainNative\ContainerType.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Country.cs" />
+    <Compile Include="TwainDotNet\TwainNative\DataArgumentType.cs" />
+    <Compile Include="TwainDotNet\TwainNative\DataGroup.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Duplex.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Event.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Fix32.cs" />
+    <Compile Include="TwainDotNet\TwainNative\FlipRotation.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Frame.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Identity.cs" />
+    <Compile Include="TwainDotNet\TwainNative\ImageFileFormat.cs" />
+    <Compile Include="TwainDotNet\TwainNative\ImageInfo.cs" />
+    <Compile Include="TwainDotNet\TwainNative\ImageLayout.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Language.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Message.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Orientation.cs" />
+    <Compile Include="TwainDotNet\TwainNative\PageType.cs" />
+    <Compile Include="TwainDotNet\TwainNative\PendingXfers.cs" />
+    <Compile Include="TwainDotNet\TwainNative\PixelType.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Status.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TransferMechanism.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Twain32Native.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TwainCapability.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TwainConstants.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TwainResult.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TwainType.cs" />
+    <Compile Include="TwainDotNet\TwainNative\TwainVersion.cs" />
+    <Compile Include="TwainDotNet\TwainNative\Units.cs" />
+    <Compile Include="TwainDotNet\TwainNative\UserInterface.cs" />
+    <Compile Include="TwainDotNet\Win32\BitmapInfoHeader.cs" />
+    <Compile Include="TwainDotNet\Win32\BitmapRenderer.cs" />
+    <Compile Include="TwainDotNet\Win32\Gdi32Native.cs" />
+    <Compile Include="TwainDotNet\Win32\Kernel32Native.cs" />
+    <Compile Include="TwainDotNet\Win32\User32Native.cs" />
+    <Compile Include="TwainDotNet\Win32\WindowsMessage.cs" />
+    <Compile Include="TwainDotNet\WinFormsWindowMessageHook.cs" />
+    <Compile Include="utilityClasses\twainHandler.cs" />
+    <Compile Include="utilityClasses\ProcessStarter.cs" />
+    <Compile Include="utilityClasses\utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="TwainDotNet\TwainDotNet.nuspec" />
+    <None Include="TwainDotNet\TwainNative\Capabilities.cs.bak" />
+    <None Include="TwainDotNet\TwainNative\ImageInfo.cs.bak" />
+    <None Include="TwainDotNet\TwainNative\TransferMechanism.cs.bak" />
+    <None Include="TwainDotNet\TwainNative\UserInterface.cs.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scannerService.resx">
+      <DependentUpon>scannerService.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

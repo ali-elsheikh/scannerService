@@ -1,0 +1,34 @@
+﻿Installing assembly 'D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe'.
+Affected parameters are:
+   assemblypath = D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe
+   logfile = D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog
+   8080 = 
+Installing service AlQemamScanningService...
+Installing assembly 'D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe'.
+Affected parameters are:
+   assemblypath = D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe
+   logfile = D:\tfsSources\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog
+   8080 = 
+Installing service AlQemamScanningService...
+Installing assembly 'C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe'.
+Affected parameters are:
+   assemblypath = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe
+   logfile = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog
+   8080 = 
+Installing service AlQemamScanningService...
+Installing assembly 'C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe'.
+Affected parameters are:
+   assemblypath = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe
+   logfile = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog
+   8080 = 
+Installing service AlQemamScanningService...
+Service AlQemamScanningService has been successfully installed.
+Creating EventLog source AlQemamScanningService in log Application...
+See the contents of the log file for the C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe assembly's progress.
+The file is located at C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog.
+Committing assembly 'C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe'.
+Affected parameters are:
+   assemblypath = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.exe
+   logtoconsole = 
+   logfile = C:\Users\Bashmohandes\Downloads\Scanner_Service_v1.0\Scanner_Service\Scanner_Service\windowsService\bin\Debug\windowsService.InstallLog
+   8080 = 
